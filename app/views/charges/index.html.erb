@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+        <button class=""><%= link_to "Nuevo cobro", new_charge_path%></button>
+
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Referencia</th>
+                    <th>Valor</th>
+                    <th>Estado</th>
+                    <th>Metodo de pago</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @charges.each do |charge| %>
+                <tr>
+                    <td><%= charge.created_at%></td>
+                    <td><%= charge.uid%></td>
+                    <td><%= charge.amount%></td>
+                    <td>
+                        <%= charge.status %>
+                        <% if charge.error_message %>
+                            <%= charge.error_message %>
+                        <% end %>
+                    </td>
+                    <td><%= charge.payment_method %></td>
+                </tr>
+                <%end%>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
