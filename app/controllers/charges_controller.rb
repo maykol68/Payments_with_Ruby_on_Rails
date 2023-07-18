@@ -20,6 +20,6 @@ class ChargesController < ApplicationController
     private
     
     def charge_params
-        params.require(:charge).permit(:amount)
+        params.require(:charge).permit(:anount)
     end
 end

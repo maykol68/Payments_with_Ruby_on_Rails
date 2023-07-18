@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "charges#index" path: "/"
+  root "charges#index"
 
   resources :charges, only:[:new, :create]
 end

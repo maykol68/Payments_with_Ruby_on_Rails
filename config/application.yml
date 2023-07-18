@@ -1,0 +1,3 @@
+EPAYCO_KEY: "..."
+
+ENV["EPAYCO_KEY"]
